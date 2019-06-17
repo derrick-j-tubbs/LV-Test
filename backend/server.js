@@ -69,7 +69,7 @@ gameRoutes.route('/update/:id').post(function(req, res) {
 });
 
 gameRoutes.route('/delete/:id').post(function(req, res) {
-    Game.findOneAndDelete(req.params.id, function(err, game) {
+    Game.findByIdAndDelete(req.params.id, function(err, game) {
         if (!game) {
             res.status(404).send("Game not found");
         } else {
