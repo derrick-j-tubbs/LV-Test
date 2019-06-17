@@ -15,9 +15,10 @@ export default class DeleteGame extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/games/'+this.props.match.params.id)
+        axios.get('http://localhost:4000/games/'+this.state.game_id)
             .then(response => {
                 this.setState({
+                    game_id: response.data._id,
                     game_title: response.data.game_title,
                     game_console: response.data.game_console,
                 })
@@ -30,11 +31,12 @@ export default class DeleteGame extends Component {
     onSubmit(e) {
         e.preventDefault();
         const game = {
+            game_id: this.state.game_id,
             game_title: this.state.game_title,
             game_console: this.state.game_console,
         };
         console.log(game);
-        axios.post('http://localhost:4000/games/delete/'+this.props.match.params.id, game)
+        axios.post('http://localhost:4000/games/delete/'+this.state.game_id, game)
             .then(res => console.log(res.data))
             .catch(error => {
                 console.log(error.message);
