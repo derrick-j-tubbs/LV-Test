@@ -8,10 +8,11 @@ To get the frontend running locally:
 
 The local webserver will use port 4000.
 
-To make calls to the backend:
+To get the backend running locally to make api calls:
 
 - ensure you have MongoDB installed
     - On Mac run `brew install mongodb`
     - On Windows/Linux follow the instructions here: https://docs.mongodb.com/manual/administration/install-community/
+- change directory to backend `cd backend`
 - `npm install nodemon` or `yarn install nodemon`
 - run `nodemon server` to start the backend server
