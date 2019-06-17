@@ -10,15 +10,17 @@ export default class EditGame extends Component {
         this.onSubmit = this.onSubmit.bind(this);
 
         this.state = {
+            game_id: this.props.match.params.id,
             game_title: '',
             game_console: '',
         }
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/games/'+this.props.match.params.id)
+        axios.get('http://localhost:4000/games/'+this.state.game_id)
             .then(response => {
                 this.setState({
+                    game_id: response.data._id,
                     game_title: response.data.game_title,
                     game_console: response.data.game_console,
                 })
@@ -43,6 +45,7 @@ export default class EditGame extends Component {
     onSubmit(e) {
         e.preventDefault();
         const game = {
+            game_id: this.state.game_id,
             game_title: this.state.game_title,
             game_console: this.state.game_console,
         };
