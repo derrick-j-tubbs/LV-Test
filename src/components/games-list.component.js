@@ -24,12 +24,22 @@ export default class GamesList extends Component {
 
     componentDidMount() {
         axios.get('http://localhost:4000/games/')
-            .then(response => {
-                this.setState({ games: response.data });
-            })
-            .catch(function (error) {
-                console.log(error)
-            })
+        .then(response => {
+            this.setState({ games: response.data });
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
+
+    componentDidUpdate() {
+        axios.get('http://localhost:4000/games/')
+        .then(response => {
+            this.setState({ games: response.data });
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
     }
 
     gameList() {
