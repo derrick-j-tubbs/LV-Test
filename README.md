@@ -2,7 +2,7 @@ This project was built with Mongoose, Express, React, and Node.js better known a
 
 To get the frontend running locally:
 
-- Clone this repo
+- Clone this repo and navigate to it
 - `npm install` or `yarn install` to install all required dependencies
 - `npm start` or `yarn start` to start the local server (this project uses create-react app)
 
