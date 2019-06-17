@@ -13,5 +13,5 @@ To make calls to the backend:
 - ensure you have MongoDB installed
     - On Mac run `brew install mongodb`
     - On Windows/Linux follow the instructions here: https://docs.mongodb.com/manual/administration/install-community/
-- `npm install nodemon` or `yarn install nodemon`
+- `npm install nodemon` or `yarn add nodemon`
 - run `nodemon server` to start the backend server
